@@ -1,6 +1,6 @@
 # Problem statement
 
-Two VM can talk to each other inside the same VNeet by default. All ports are open by default.
+Two VM can talk to each other inside the same VNet by default. All ports are open by default.
 
 # setup
 ## VNet (shipping vnet)
@@ -43,3 +43,21 @@ How to start in server in vm2 ? Public IP is not available.
 ![alt text](image-2.png)
 
 
+# problem statement 2
+
+Two vm on different subnet can talk to each other by default. All ports are open by default.
+
+# setup
+## subnet-2
+1. create a subnet (10.0.1.0/24)
+
+## VM-3
+1. create a VM (receiving server-1)
+2. Enable public IP
+3. Enable inbound port 22 (SSH)
+
+# Test
+1. SSH to VM-3 using public IP
+2. curl http://10.0.0.5 # private ip of vm2
+
+![alt text](image-3.png)

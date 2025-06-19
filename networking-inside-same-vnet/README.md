@@ -61,3 +61,22 @@ Two vm on different subnet can talk to each other by default. All ports are open
 2. curl http://10.0.0.5 # private ip of vm2
 
 ![alt text](image-3.png)
+
+
+# problem statement 3
+
+Three VM on different subnet can talk to each other by default. All ports are open by default. But want  to restrict the traffic to vm1 only through vm2 an vm3 should be blocked
+
+# setup
+1. create a subnet 1 (10.0.0.0/24)
+2. create a subnet 2 (10.0.1.0/24)
+3. create a subnet 3 (10.0.2.0/24)
+4. create a VM-1 ( server-1)
+5. create a VM-2 ( server-2)
+6. create a VM-3 ( server-3)
+7. Enable public IP for VM-1 , VM-2, VM-3 for ssh
+8. in nsg of server-1 vm, deny port 80 inbound traffic from server-3
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)

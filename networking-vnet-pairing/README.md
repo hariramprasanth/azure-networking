@@ -30,6 +30,9 @@ Two VMs in different Vnets can't talk to each other by default. Need to enable V
    - Select vnet-2 and enable allow forwarded traffic
 
 ![alt text](image-1.png)
+
+Note: here both vnet peering willbe created in both vnets. So, you can access vm-1 from vm-2 and vice versa. if we delete peering from one side, then communication will be lost and another vnet-peering will also be deleted.
+
  9. Now try to curl http://10.0.0.4 (private ip of vm-1)
  10. It will succeed.
 

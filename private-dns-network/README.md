@@ -45,3 +45,19 @@ https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-re
 Log
 
 ![alt text](image-3.png)
+
+
+
+## EXtra
+
+what if i create another vm with same name vm1 in another resource group in same vnet vnet1?  Both private dns and deafult azure dns will resolve to the new vm1.(10.0.0.5)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
+
+after start server in new vm1
+
+![alt text](image-6.png)
+
+conclusion: Azure DNS will resolve to the new vm1, not the old one. So, if you want to use private DNS names, you should use unique names for your VMs.

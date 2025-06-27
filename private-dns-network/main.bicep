@@ -12,3 +12,14 @@ module vnet1 '../modules/vnet.bicep' = {
     ]
   }
 }
+
+module vm1 '../modules/vm.bicep' = {
+  name: 'vm1'
+  params: {
+    vmName: 'vm1'
+    location: resourceGroup().location
+    adminUsername: 'azureuser'
+    adminPassword: ''
+    subnetId: vnet1.outputs.vnetproperties[0].id
+  }
+}
